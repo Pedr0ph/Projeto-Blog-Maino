@@ -3,10 +3,8 @@ class ArticlesController < ApplicationController
 
   # GET /articles or /articles.json
   def index
-    Article.order(:created_at)
-    # OR
-    Article.order("created_at")
-    @articles = Article.all.order(:created_at)
+    
+    @pagy, @articles = pagy(Article.all.order(:created_at))
   end
 
   # GET /articles/1 or /articles/1.json
