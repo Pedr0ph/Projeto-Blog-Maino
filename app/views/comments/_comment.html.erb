@@ -1,6 +1,6 @@
 <p>
   <strong>Commenter:</strong>
-  <%= comment.commenter %>
+  <%= comment.commenter ? comment.commenter&.email : 'Anonymous' %>
 </p>
 
 <p>
